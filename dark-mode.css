@@ -1,0 +1,134 @@
+/* Dark Mode Styles */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.container {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+h1,
+h2 {
+  color: #e0e0e0;
+}
+
+.status {
+  color: #b0b0b0;
+}
+
+.status.win {
+  color: #66bb6a;
+}
+
+.status.draw {
+  color: #ffb74d;
+}
+
+.cell {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+.cell:hover {
+  background-color: #3a3a3a;
+}
+
+.cell.x {
+  color: #64b5f6;
+}
+
+.cell.o {
+  color: #e57373;
+}
+
+.cell.highlight {
+  background-color: #454500;
+}
+
+.game-over-message {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.instructions {
+  background-color: #2a2a2a;
+}
+
+.collapsible-button {
+  color: #e0e0e0;
+}
+
+.collapsible-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.collapsible-button:focus {
+  box-shadow: 0 0 0 2px rgba(103, 58, 183, 0.4);
+}
+
+.theme-toggle-label {
+  color: #b0b0b0;
+}
+
+.theme-toggle-wrapper {
+  background-color: rgba(30, 30, 30, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle-slider {
+  background-color: #555;
+}
+
+.theme-toggle-slider:before {
+  background-color: #ddd;
+}
+
+/* Statistics Section Dark Mode */
+.statistics-section {
+  background-color: #2a2a2a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.statistics-section h2 {
+  color: #e0e0e0;
+}
+
+.statistic-item {
+  color: #b0b0b0;
+}
+
+.player-x-wins .statistic-label,
+.player-x-wins .statistic-value {
+  color: #64b5f6; /* Lighter blue for Player X in dark mode */
+}
+
+.player-o-wins .statistic-label,
+.player-o-wins .statistic-value {
+  color: #e57373; /* Lighter red for Player O in dark mode */
+}
+
+.draws .statistic-label,
+.draws .statistic-value {
+  color: #ffb74d; /* Lighter orange for Draws in dark mode */
+}
+
+.reset-statistics-button {
+  background-color: #616161;
+  color: #e0e0e0;
+}
+
+.reset-statistics-button:hover {
+  background-color: #757575;
+}
+
+.reset-statistics-button:focus {
+  box-shadow: 0 0 0 3px rgba(97, 97, 97, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+  }
+}

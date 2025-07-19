@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-tac-toe</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.min.css" />
+    <link rel="stylesheet" href="dark-mode.min.css" id="dark-mode-stylesheet" disabled />
+    <link rel="stylesheet" href="notifications.css" />
+  </head>
+
+  <body>
+    <div class="notification-container" id="notification-container"></div>
+    <div class="theme-toggle-wrapper">
+      <label class="theme-toggle" for="dark-mode-toggle">
+        <span class="theme-toggle-label">Light</span>
+        <div class="theme-toggle-switch">
+          <input
+            type="checkbox"
+            id="dark-mode-toggle"
+            aria-label="Toggle between light and dark mode"
+          />
+          <span class="theme-toggle-slider"></span>
+        </div>
+        <span class="theme-toggle-label">Dark</span>
+      </label>
+    </div>
+
+    <div class="container">
+      <h1>Tic-tac-toe</h1>
+
+      <div class="status" id="status" aria-live="polite">Player X's turn</div>
+
+      <!-- Hidden element for screen reader announcements -->
+      <div class="sr-only" id="sr-announcer" aria-live="assertive"></div>
+
+      <div class="game-board-container">
+        <div
+          class="game-board"
+          id="game-board"
+          role="grid"
+          aria-label="Tic-tac-toe game board"
+          aria-description="3 by 3 grid where players take turns marking X and O"
+        >
+          <div
+            class="cell"
+            data-row="0"
+            data-col="0"
+            tabindex="0"
+            role="gridcell"
+            aria-label="empty cell, row 1, column 1"
+          ></div>
+          <div
+            class="cell"
+            data-row="0"
+            data-col="1"
+            tabindex="0"
+            role="gridcell"
+            aria-label="empty cell, row 1, column 2"
+          ></div>
+          <div
+            class="cell"
+            data-row="0"
+            data-col="2"
+            tabindex="0"
+            role="gridcell"
+            aria-label="empty cell, row 1, column 3"
+          ></div>
+          <div
+            class="cell"
+            data-row="1"
+            data-col="0"
+            tabindex="0"
+            role="gridcell"
+            aria-label="empty cell, row 2, column 1"
+          ></div>
+          <div
+            class="cell"
+            data-row="1"
+            data-col="1"
+            tabindex="0"
+            role="gridcell"
+            aria-label="empty cell, row 2, column 2"
+          ></div>
+          <div
+            class="cell"
+            data-row="1"
+            data-col="2"
+            tabindex="0"
+            role="gridcell"
+            aria-label="empty cell, row 2, column 3"
+          ></div>
+          <div
+            class="cell"
+            data-row="2"
+            data-col="0"
+            tabindex="0"
+            role="gridcell"
+            aria-label="empty cell, row 3, column 1"
+          ></div>
+          <div
+            class="cell"
+            data-row="2"
+            data-col="1"
+            tabindex="0"
+            role="gridcell"
+            aria-label="empty cell, row 3, column 2"
+          ></div>
+          <div
+            class="cell"
+            data-row="2"
+            data-col="2"
+            tabindex="0"
+            role="gridcell"
+            aria-label="empty cell, row 3, column 3"
+          ></div>
+        </div>
+        <div class="game-over-overlay" id="game-over-overlay" aria-hidden="true">
+          <div class="game-over-message" id="game-over-message" aria-live="assertive"></div>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button
+          class="reset-button"
+          id="reset-button"
+          aria-label="Reset Game and start a new match"
+        >
+          Reset Game
+        </button>
+      </div>
+
+      <div class="statistics-section" id="statistics-section" aria-labelledby="statistics-heading">
+        <h2 id="statistics-heading">Game Statistics</h2>
+        <div class="statistics-container">
+          <div class="statistic-item player-x-wins">
+            <span class="statistic-label">Player X:</span>
+            <span class="statistic-value" id="player-x-wins">0</span>
+            <span class="statistic-unit">wins</span>
+          </div>
+          <div class="statistic-item player-o-wins">
+            <span class="statistic-label">Player O:</span>
+            <span class="statistic-value" id="player-o-wins">0</span>
+            <span class="statistic-unit">wins</span>
+          </div>
+          <div class="statistic-item draws">
+            <span class="statistic-label">Draws:</span>
+            <span class="statistic-value" id="draws">0</span>
+          </div>
+        </div>
+        <button
+          class="reset-statistics-button"
+          id="reset-statistics-button"
+          aria-label="Reset all game statistics to zero"
+        >
+          Reset Statistics
+        </button>
+      </div>
+
+      <div class="instructions" id="instructions">
+        <button
+          class="collapsible-button"
+          id="instructions-toggle"
+          aria-expanded="false"
+          aria-controls="instructions-content"
+        >
+          <span>How to play with keyboard</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+        <div class="collapsible-content" id="instructions-content" hidden>
+          <ul>
+            <li>Use Tab to navigate to the game board</li>
+            <li>Use Arrow keys to move between cells</li>
+            <li>Press Enter or Space to select a cell</li>
+            <li>Press Tab to navigate to the Reset button</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+# Ignore artifacts:
+node_modules
+coverage
+dist
+build
+.git
+.github
+.vscode
+.idea
+*.min.js
+*.min.css
